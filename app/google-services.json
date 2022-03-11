@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "668178646383",
+    "project_id": "mipractica-2a3c0",
+    "storage_bucket": "mipractica-2a3c0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:668178646383:android:e6c07fb8cb911b3472549a",
+        "android_client_info": {
+          "package_name": "com.mipractica"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "668178646383-eml6n17fcsjbjh03vpeth0usi16tf8ot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBsDXiqwNUx1xWVWcmBRiWg4qBFeZE-d2E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "668178646383-eml6n17fcsjbjh03vpeth0usi16tf8ot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
