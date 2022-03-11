@@ -1,13 +1,35 @@
 package com.mipractica.viewmodel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.*
+import com.mipractica.data.ViajeDatabase
+import com.mipractica.model.Viaje
+import com.mipractica.repository.ViajeRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-class ViajeViewModel : ViewModel() {
+class ViajeViewModel (application: Application) : AndroidViewModel(application) {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is home Fragment"
+
+    val getAllData: LiveData<List<Viaje>>
+    private val repository: ViajeRepository
+
+    init {
+        val viajeDao = ViajeDatabase.getDatabase(application).viajeDao()
+        repository = ViajeRepository(viajeDao)
+        getAllData = repository.getAllData
     }
-    val text: LiveData<String> = _text
+
+
+    fun addViaje(viaje: Viaje){
+        viewModelScope.launch(Dispatchers.IO) {repository.addViaje(viaje)}
+    }
+
+    fun updateViaje(viaje: Viaje){
+        viewModelScope.launch(Dispatchers.IO) {repository.updateViaje(viaje)}
+    }
+
+    fun deleteViaje(viaje: Viaje){
+        viewModelScope.launch(Dispatchers.IO) {repository.deleteViaje(viaje)}
+    }
 }

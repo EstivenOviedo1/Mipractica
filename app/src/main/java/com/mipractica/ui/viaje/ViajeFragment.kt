@@ -7,6 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.mipractica.R
+import com.mipractica.adapter.ViajeAdapter
 
 import com.mipractica.databinding.FragmentViajeBinding
 import com.mipractica.viewmodel.ViajeViewModel
@@ -14,9 +18,6 @@ import com.mipractica.viewmodel.ViajeViewModel
 class ViajeFragment : Fragment() {
 
     private var _binding: FragmentViajeBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,17 +25,30 @@ class ViajeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val homeViewModel =
+        var viajeViewModel =
             ViewModelProvider(this).get(ViajeViewModel::class.java)
 
         _binding = FragmentViajeBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
-        val textView: TextView = binding.textHome
-        homeViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
+        binding.fbAgregar.setOnClickListener{
+            findNavController().navigate(R.id.action_nav_viaje_to_addViajeFragment)
         }
-        return root
+
+        // Activar el RecyclerView
+        val viajeAdapter = ViajeAdapter()
+        val reciclador = binding.reciclador
+        reciclador.adapter = viajeAdapter
+        reciclador.layoutManager = LinearLayoutManager(requireContext())
+
+        viajeViewModel = ViewModelProvider(this)[ViajeViewModel::class.java]
+
+        viajeViewModel.getAllData.observe(viewLifecycleOwner) { viajes ->
+            viajeAdapter.setData(viajes)
+        }
+
+        return binding.root
+
+
     }
 
     override fun onDestroyView() {

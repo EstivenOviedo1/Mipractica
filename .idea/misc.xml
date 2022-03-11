@@ -6,8 +6,14 @@
         <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/activity_central.xml" value="0.22826086956521738" />
         <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/app_bar_central.xml" value="0.22826086956521738" />
-        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/content_central.xml" value="0.22826086956521738" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/content_central.xml" value="0.264" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/fragment_add_viaje.xml" value="0.264" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/fragment_update_viaje.xml" value="0.22826086956521738" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/fragment_viaje.xml" value="0.22826086956521738" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/layout/viaje_fila.xml" value="0.22826086956521738" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/menu/activity_main_drawer.xml" value="0.25" />
         <entry key="..\:/Documentos/Mipractica/app/src/main/res/menu/central.xml" value="0.25" />
+        <entry key="..\:/Documentos/Mipractica/app/src/main/res/menu/delete_menu.xml" value="0.25" />
       </map>
     </option>
   </component>

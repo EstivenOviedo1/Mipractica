@@ -3,13 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_viaje">
 
     <fragment
-        android:id="@+id/nav_home"
+        android:id="@+id/nav_viaje"
         android:name="com.mipractica.ui.viaje.ViajeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_viaje" />
+        android:label="@string/menu_viaje"
+        tools:layout="@layout/fragment_viaje" >
+        <action
+            android:id="@+id/action_nav_viaje_to_addViajeFragment"
+            app:destination="@id/addViajeFragment" />
+        <action
+            android:id="@+id/action_nav_viaje_to_updateViajeFragment"
+            app:destination="@id/updateViajeFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -22,4 +29,24 @@
         android:name="com.mipractica.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/addViajeFragment"
+        android:name="com.mipractica.ui.viaje.AddViajeFragment"
+        android:label="fragment_add_viaje"
+        tools:layout="@layout/fragment_add_viaje" >
+        <action
+            android:id="@+id/action_addViajeFragment_to_nav_viaje"
+            app:destination="@id/nav_viaje" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateViajeFragment"
+        android:name="com.mipractica.ui.viaje.UpdateViajeFragment"
+        android:label="UpdateViajeFragment" >
+        <action
+            android:id="@+id/action_updateViajeFragment_to_nav_viaje"
+            app:destination="@id/nav_viaje" />
+        <argument
+            android:name="viaje"
+            app:argType="com.mipractica.model.Viaje" />
+    </fragment>
 </navigation>
